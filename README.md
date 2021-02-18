@@ -7,4 +7,5 @@ Fetching and displaying the results was not an issues. the issues is with the so
 
 including bulma css to my project was a nightmare and coldn't manage that.
 
-
+/////////////////////////////////
+Resolved the user inputs to be stored in a single object.
