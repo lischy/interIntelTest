@@ -30,27 +30,36 @@ class MyView1 extends LitElement {
     this.email = "";
     this.password = "";
     this.phoneNumber = "";
-    this.details = [];
+    this.details = [
+      {
+        userName: "",
+        email: "",
+        password: "",
+        phoneNumber: "",
+      },
+    ];
   }
   updateDetails(e) {
     const { name, value } = e.target;
-    console.log([name]);
+    console.log(this.details);
     this.details = [
-      ...this.details,
-      {
-        [name]: value,
-      },
+      Object.assign(
+        {},
+        ...this.details,
+
+        { [name]: value }
+      ),
     ];
 
     console.log(this.details);
   }
   saveDetails(e) {
     e.preventDefault();
-    console.log(this.details);
-    alert(JSON.stringify(this.details));
-    this.details.map((details) => {
-      console.log(JSON.stringify(details));
-      alert(JSON.stringify(details));
+    // console.log(this.details);
+    // alert(JSON.stringify(this.details));
+    this.details.map((detail) => {
+      console.log(JSON.stringify(detail));
+      alert(JSON.stringify(detail));
     });
   }
   render() {
